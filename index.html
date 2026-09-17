@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Anika ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    overflow:hidden;
+    height:100vh;
+    color:white;
+    font-family:monospace;
+}
+
+.container{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+/* HEART */
+#heartCanvas{
+    position:absolute;
+    width:55%;
+    height:75%;
+    left:2%;
+    top:12%;
+}
+
+/* CODE SCREEN */
+.code-box{
+    position:absolute;
+    right:3%;
+    top:13%;
+    width:40%;
+    height:70%;
+
+    background:#111;
+    border-radius:5px;
+
+    padding:25px 20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,.04);
+}
+
+.window-buttons{
+    position:absolute;
+    top:10px;
+    right:12px;
+
+    color:#666;
+    font-family:Arial;
+    font-size:18px;
+}
+
+.code{
+    margin-top:15px;
+
+    font-size:
+        clamp(8px,1.25vw,16px);
+
+    line-height:1.5;
+
+    white-space:pre-wrap;
+}
+
+.pink{
+    color:#e58bdc;
+}
+
+.green{
+    color:#8bd17c;
+}
+
+.yellow{
+    color:#f3d46b;
+}
+
+.blue{
+    color:#79c8ff;
+}
+
+/* FINAL MESSAGE */
+
+.final-message{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:#000;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity 2.5s ease,
+        visibility 2.5s ease;
+
+    padding:25px;
+}
+
+.final-message.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.final-message h1{
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(38px,8vw,70px);
+
+    color:#ff6b9d;
+
+    text-shadow:
+        0 0 10px #ff276d,
+        0 0 25px #ff276d;
+
+    margin-bottom:25px;
+}
+
+.final-message p{
+    max-width:750px;
+
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(18px,4vw,30px);
+
+    line-height:1.7;
+
+    color:#fff;
+}
+
+.small-heart{
+    margin-top:25px;
+
+    font-size:42px;
+
+    animation:
+        heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    #heartCanvas{
+        width:100%;
+        height:52%;
+        left:0;
+        top:2%;
+    }
+
+    .code-box{
+        width:92%;
+        height:38%;
+
+        right:4%;
+        top:auto;
+        bottom:3%;
+
+        padding:12px;
+    }
+
+    .code{
+        font-size:8px;
+        line-height:1.4;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- HEART -->
+    <canvas id="heartCanvas"></canvas>
+
+
+    <!-- PYTHON CODE WINDOW -->
+    <div class="code-box">
+
+        <div class="window-buttons">
+            — □ ×
+        </div>
+
+        <div class="code">
+
+<span class="pink">import</span> turtle
+<span class="pink">import</span> math
+<span class="pink">import</span> random
+
+screen = turtle.Screen()
+screen.bgcolor(<span class="green">"black"</span>)
+
+t = turtle.Turtle()
+t.speed(<span class="yellow">0</span>)
+t.hideturtle()
+
+colors = [
+<span class="green">"red"</span>,
+<span class="green">"blue"</span>,
+<span class="green">"lime"</span>,
+<span class="green">"yellow"</span>,
+<span class="green">"cyan"</span>,
+<span class="green">"magenta"</span>,
+<span class="green">"orange"</span>,
+<span class="green">"pink"</span>
+]
+
+<span class="pink">for</span> i <span class="pink">in</span> range(<span class="yellow">120</span>):
+
+    angle = (
+        i * math.pi * <span class="yellow">2</span>
+        / <span class="yellow">120</span>
+    )
+
+    x = <span class="yellow">16</span> * (
+        math.sin(angle) ** <span class="yellow">3</span>
+    )
+
+    y = (
+        <span class="yellow">13</span> * math.cos(angle)
+        - <span class="yellow">5</span> * math.cos(<span class="yellow">2</span>*angle)
+        - <span class="yellow">2</span> * math.cos(<span class="yellow">3</span>*angle)
+        - math.cos(<span class="yellow">4</span>*angle)
+    )
+
+    t.color(
+        random.choice(colors)
+    )
+
+    t.goto(x,y)
+
+turtle.done()
+
+        </div>
+    </div>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <div class="final-message" id="finalMessage">
+
+        <h1>Anika...</h1>
+
+        <p>
+            I'm really sorry. 🥺
+            <br><br>
+
+            I know I've made the same mistake
+            again and again,
+            <br>
+
+            and I know this sorry isn't enough
+            for you.
+            <br><br>
+
+            But I'm genuinely trying
+            my very best
+            to change myself. 🤍
+        </p>
+
+        <div class="small-heart">
+            ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const canvas =
+    document.getElementById("heartCanvas");
+
+const ctx =
+    canvas.getContext("2d");
+
+
+/* CANVAS */
+
+function resizeCanvas(){
+
+    canvas.width =
+        canvas.offsetWidth *
+        devicePixelRatio;
+
+    canvas.height =
+        canvas.offsetHeight *
+        devicePixelRatio;
+
+    ctx.scale(
+        devicePixelRatio,
+        devicePixelRatio
+    );
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+/* HEART EQUATION */
+
+function heart(t){
+
+    const x =
+        16 *
+        Math.pow(
+            Math.sin(t),
+            3
+        );
+
+    const y =
+        13 * Math.cos(t)
+        - 5 * Math.cos(2*t)
+        - 2 * Math.cos(3*t)
+        - Math.cos(4*t);
+
+    return {
+        x:x,
+        y:y
+    };
+}
+
+
+/* CREATE POINTS */
+
+const points = [];
+
+const totalPoints = 120;
+
+for(
+    let i = 0;
+    i < totalPoints;
+    i++
+){
+
+    const angle =
+        (i * Math.PI * 2)
+        / totalPoints;
+
+    points.push(
+        heart(angle)
+    );
+}
+
+
+/* COLOURS */
+
+const colors = [
+
+    "#ff1744",
+    "#00e5ff",
+    "#76ff03",
+    "#ffea00",
+    "#e040fb",
+    "#ff9100",
+    "#ff4081",
+    "#2979ff"
+
+];
+
+
+/* DRAW */
+
+let currentPoint = 0;
+
+function drawHeart(){
+
+    if(
+        currentPoint >=
+        points.length
+    ){
+
+        /* WAIT BEFORE MESSAGE */
+
+        setTimeout(
+            function(){
+
+                document
+                    .getElementById(
+                        "finalMessage"
+                    )
+                    .classList
+                    .add("show");
+
+            },
+            1800
+        );
+
+        return;
+    }
+
+
+    const point =
+        points[currentPoint];
+
+
+    const centerX =
+        canvas.offsetWidth / 2;
+
+    const centerY =
+        canvas.offsetHeight / 2;
+
+
+    const scale =
+        Math.min(
+            canvas.offsetWidth,
+            canvas.offsetHeight
+        ) / 32;
+
+
+    const x =
+        centerX +
+        point.x * scale;
+
+    const y =
+        centerY -
+        point.y * scale;
+
+
+    /* RANDOM COLOUR */
+
+    const color =
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ];
+
+
+    /* LIGHT RAY */
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        centerX,
+        centerY
+    );
+
+    ctx.lineTo(
+        x,
+        y
+    );
+
+    ctx.strokeStyle =
+        color;
+
+    ctx.lineWidth = 1;
+
+    ctx.shadowBlur = 7;
+
+    ctx.shadowColor =
+        color;
+
+    ctx.stroke();
+
+
+    /* GLOWING DOT */
+
+    ctx.beginPath();
+
+    ctx.arc(
+        x,
+        y,
+        2.2,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fillStyle =
+        color;
+
+    ctx.shadowBlur = 12;
+
+    ctx.fill();
+
+
+    currentPoint++;
+
+
+    /*
+       SLOW ANIMATION
+
+       Increase 90 to 120
+       if you want it even slower.
+    */
+
+    setTimeout(
+        drawHeart,
+        90
+    );
+}
+
+
+/* START */
+
+setTimeout(
+    drawHeart,
+    800
+);
+
+</script>
+
+</body>
+</html>
